@@ -5,8 +5,8 @@
                 Boollflix
             </div>
             <form action="" class="justify-content-end">
-                <input type="text">
-                <button class="btn btn-outline-danger" >Cerca</button>
+                <input type="text" placeholder="Search movie" v-model="inputMovie" @keyup.enter="$emit('callSearch', inputMovie)">
+                <button class="btn btn-outline-danger" @click="$emit('callSearch', inputMovie)" >Search</button>
             </form>
         </div>
     </div>
@@ -14,7 +14,12 @@
 
 <script>
 export default {
-    name: 'HeaderBool'
+    name: 'HeaderBool',
+    data() {
+        return {
+            inputMovie:'',
+        }
+    }
 }
 </script>
 

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-
+// import axios from "axios"
 import HeaderBool from './components/HeaderBool.vue'
 import MainBool from './components/MainBool.vue'
 export default {
