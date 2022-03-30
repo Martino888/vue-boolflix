@@ -5,7 +5,7 @@
             <div class="row col">
                 <div class="card">
                     <CardBool v-for="element in arrMovies" :key="element.id"
-                    :img="element.poster_path"
+                    :src="element.poster_path"
                     :title="element.title"
                     :origianlTitle="element.original_title"
                     :lang="element.original_language"
