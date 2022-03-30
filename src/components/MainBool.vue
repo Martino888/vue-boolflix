@@ -3,7 +3,6 @@
         <div class="container">
             <h1>Movie</h1>
             <div class="row col">
-                <div class="card">
                     <CardBool v-for="element in arrMovies" :key="element.id"
                     :src="element.poster_path"
                     :title="element.title"
@@ -11,19 +10,16 @@
                     :lang="element.original_language"
                     :vote="element.vote_average"
                     />
-                </div>
             </div>
             <h1>Serie tv</h1>
             <div class="row col">
-                <div class="card">
                     <CardSeries v-for="element in arrSeries" :key="element.id"
-                    :img="element.poster_path"
+                    :src="element.poster_path"
                     :title="element.name"
                     :origianlTitle="element.original_name"
                     :lang="element.original_language"
                     :vote="element.vote_average"
                     />
-                </div>
             </div>
         </div>
     </main>

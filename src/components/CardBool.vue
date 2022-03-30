@@ -1,7 +1,7 @@
 <template>
         <div class="x">
-            <img :src="`https://image.tmdb.org/t/p/w342${src}`" alt="">
-            <b>{{ title }}</b>
+            <img :src="`https://image.tmdb.org/t/p/w342/${src}`" alt="">
+            <div>{{ title }}</div>
             <p>{{origianlTitle }}</p>
             <lang-flag :iso="lang" :squared="false" />
             <h4>{{ vote }}</h4>
@@ -27,11 +27,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+    img {
+        width: 300px;
+        height: 450px;
+    }
+
 .x{
-    display: inline-block;
-    width: calc(100% / 5 - 20px);
-    min-width: 150px;
-    background-color: rgb(37, 101, 170);
+    width: calc(100% / 3 - 20px);
     padding: 10px;
     justify-content: center;
     text-align: center;
