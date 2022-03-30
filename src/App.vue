@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderBool @callSearch="callingSearch"></HeaderBool>
-    <MainBool :arrMovies="arrMovies"></MainBool>
+    <HeaderBool @callSearch="callingSearch" @callSeries="callingSeries"></HeaderBool>
+    <MainBool :arrMovies="arrMovies" :arrSeries="arrSeries"></MainBool>
   </div>
 </template>
 
@@ -17,7 +17,8 @@ export default {
   },
   data(){
     return {
-      arrMovies: []
+      arrMovies: [],
+      arrSeries: []
     }
   },
   methods: {
@@ -26,6 +27,13 @@ export default {
       .then((rispostaMovie) =>{
         console.log(rispostaMovie)
         this.arrMovies = rispostaMovie.data.results
+      })
+    },
+    callingSeries(inputMovie){
+      axios.get('https://api.themoviedb.org/3/search/tv?api_key=2a1eafb77e5173892c5f55c2d7d7a8c8&page=1&include_adult=false&language=en-US&query='+inputMovie)
+      .then((rispostaserie) =>{
+        console.log(rispostaserie)
+        this.arrSeries = rispostaserie.data.results
       })
     }
   }

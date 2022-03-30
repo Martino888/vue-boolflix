@@ -7,7 +7,7 @@
             <div class="justify-content-end">
                 <!-- callSearc serve per passare i dati/funzione all app vue inserendolo con la @  nel tag headerBool mentre inputMovie è la variabile che viene inclusa nei data   -->
                 <input type="text" placeholder="Search movie" v-model="inputMovie" @keyup.enter="$emit('callSearch', inputMovie)">
-                <button class="btn btn-outline-danger" @click="$emit('callSearch', inputMovie)" >Search</button>
+                <button class="btn btn-outline-danger" @click="$emit('callSearch', inputMovie)">Search</button>
             </div>
         </div>
     </div>

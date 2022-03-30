@@ -5,8 +5,21 @@
             <div class="row col">
                 <div class="card">
                     <CardBool v-for="element in arrMovies" :key="element.id"
+                    :img="element.poster_path"
                     :title="element.title"
                     :origianlTitle="element.original_title"
+                    :lang="element.original_language"
+                    :vote="element.vote_average"
+                    />
+                </div>
+            </div>
+            <h1>Serie tv</h1>
+            <div class="row col">
+                <div class="card">
+                    <CardSeries v-for="element in arrSeries" :key="element.id"
+                    :img="element.poster_path"
+                    :title="element.name"
+                    :origianlTitle="element.original_name"
                     :lang="element.original_language"
                     :vote="element.vote_average"
                     />
@@ -17,14 +30,17 @@
 </template>
 
 <script>
+import CardSeries from './CardSeries.vue'
 import CardBool from './CardBool.vue'
 export default {
     name: 'MainBool',
     components:{
-            CardBool
+            CardBool,
+            CardSeries
         },
     props: {
-        arrMovies: Array
+        arrMovies: Array,
+        arrSeries: Array
     }
 }
 </script>
