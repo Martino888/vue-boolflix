@@ -4,10 +4,11 @@
             <div class="logo text-uppercase  fw-bold fs-4 justify-content-start ">
                 Boollflix
             </div>
-            <form action="" class="justify-content-end">
+            <div class="justify-content-end">
+                <!-- callSearc serve per passare i dati/funzione all app vue inserendolo con la @  nel tag headerBool mentre inputMovie è la variabile che viene inclusa nei data   -->
                 <input type="text" placeholder="Search movie" v-model="inputMovie" @keyup.enter="$emit('callSearch', inputMovie)">
                 <button class="btn btn-outline-danger" @click="$emit('callSearch', inputMovie)" >Search</button>
-            </form>
+            </div>
         </div>
     </div>
 </template>
