@@ -1,13 +1,17 @@
 <template>
-        <div class="x">
-            <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342/${src}`" alt="title">
-            <div class="y">
-                <div class="fw-bold">Titolo:{{ title }}</div>
+    <div class=" x flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img class="img-fluid"  :src="`https://image.tmdb.org/t/p/w342/${src}`"  alt="title">
+            </div>
+            <div class="flip-card-back" >
+                <h3 class="fw-bold">Titolo:{{ title }}</h3>
                 <p>Titolo originale:{{origianlTitle }}</p>
                 <lang-flag :iso="lang" :squared="false" />
                 <h4>vote:{{ vote }}</h4>
             </div>
         </div>
+    </div>
 </template>
 
 <script>
@@ -25,6 +29,9 @@ export default {
     components: {
         LangFlag
     },
+    methods: {
+
+    }
 }
 </script>
 
@@ -36,10 +43,6 @@ export default {
         border: 3px solid rgb(206, 192, 192);
     }
 
-img:hover {
-    display: none;
-}
-
 .x{
     width: calc(100% / 3 - 20px);
     padding: 10px;
@@ -47,4 +50,42 @@ img:hover {
     text-align: center;
     margin: 10px;
 }
+
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 450px;
+    perspective: 1000px;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
 </style>

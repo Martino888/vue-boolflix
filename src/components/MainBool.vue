@@ -2,7 +2,7 @@
     <main class="bg-primary">
         <div class="container">
             <h1 v-show="arrMovies != ''" >Movie</h1>
-            <div class="row col ">
+            <div class="row col d-flex justify-content-center">
                     <CardBool v-for="element in arrMovies" :key="element.id"
                     :src="element.poster_path"
                     :title="element.title"
@@ -12,7 +12,7 @@
                     />
             </div>
             <h1 v-show="arrSeries != ''" >Serie tv</h1>
-            <div class="row col">
+            <div class="row col d-flex justify-content-center">
                     <CardSeries v-for="element in arrSeries" :key="element.id"
                     :src="element.poster_path"
                     :title="element.name"
