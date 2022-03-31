@@ -8,7 +8,10 @@
                 <h3 class="fw-bold">Titolo:{{ title }}</h3>
                 <p>Titolo originale:{{origianlTitle }}</p>
                 <lang-flag :iso="lang" :squared="false" />
-                <h4>vote:{{ vote }}</h4>
+                <div>
+                    <strong> vote : </strong>
+                    <strong v-for="(element, index) in 5 " :key="index" :class="index < votoIntero(vote) ? 'yellows' :  '' " >&starf; </strong>
+                </div>
             </div>
         </div>
     </div>
@@ -30,7 +33,9 @@ export default {
         LangFlag
     },
     methods: {
-
+        votoIntero(voto) {
+            return Math.ceil(voto / 2);
+        }
     }
 }
 </script>
@@ -41,6 +46,10 @@ export default {
         width: 300px;
         height: 450px;
         border: 3px solid rgb(206, 192, 192);
+    }
+
+    .yellows {
+        color:yellow;
     }
 
 .x{
@@ -68,7 +77,7 @@ export default {
 }
 
 .flip-card-back{
-    background: black;
+    background: rgb(156, 74, 74);
     transform: rotateY(180deg);
     z-index: 0;
     width: 100%;
