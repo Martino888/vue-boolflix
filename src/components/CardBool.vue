@@ -4,7 +4,7 @@
             <div class="flip-card-front">
                 <img class="img-fluid"  :src="`https://image.tmdb.org/t/p/w342/${src}`"  alt="title">
             </div>
-            <div class="flip-card-back" >
+            <div  >
                 <h3 class="fw-bold">Titolo:{{ title }}</h3>
                 <p>Titolo originale:{{origianlTitle }}</p>
                 <lang-flag :iso="lang" :squared="false" />
@@ -53,9 +53,10 @@ export default {
 
 
 .flip-card {
-    background-color: transparent;
+    background-color: blue;
+    border: 1px solid black;
     width: 300px;
-    height: 450px;
+    height: 470px;
     perspective: 1000px;
 }
 
@@ -63,7 +64,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -81,11 +82,5 @@ export default {
 }
 
 
-
-
-.flip-card-front {
-    background-color: #bbb;
-    color: black;
-}
 
 </style>
