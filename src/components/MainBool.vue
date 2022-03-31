@@ -1,8 +1,8 @@
 <template>
     <main class="bg-primary">
         <div class="container">
-            <h1>Movie</h1>
-            <div class="row col">
+            <h1 v-show="arrMovies != ''" >Movie</h1>
+            <div class="row col ">
                     <CardBool v-for="element in arrMovies" :key="element.id"
                     :src="element.poster_path"
                     :title="element.title"
@@ -11,7 +11,7 @@
                     :vote="element.vote_average"
                     />
             </div>
-            <h1>Serie tv</h1>
+            <h1 v-show="arrSeries != ''" >Serie tv</h1>
             <div class="row col">
                     <CardSeries v-for="element in arrSeries" :key="element.id"
                     :src="element.poster_path"
@@ -37,7 +37,7 @@ export default {
     props: {
         arrMovies: Array,
         arrSeries: Array
-    }
+    },
 }
 </script>
 
@@ -45,4 +45,5 @@ export default {
 main{
 min-height:calc(100vh - 60px) ;
 }
+
 </style>

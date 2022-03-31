@@ -1,10 +1,12 @@
 <template>
         <div class="x">
-            <img :src="`https://image.tmdb.org/t/p/w342/${src}`" alt="">
-            <div>{{ title }}</div>
-            <p>{{origianlTitle }}</p>
-            <lang-flag :iso="lang" :squared="false" />
-            <h4>{{ vote }}</h4>
+            <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342/${src}`" alt="title">
+            <div class="y">
+                <div class="fw-bold">Titolo:{{ title }}</div>
+                <p>Titolo originale:{{origianlTitle }}</p>
+                <lang-flag :iso="lang" :squared="false" />
+                <h4>vote:{{ vote }}</h4>
+            </div>
         </div>
 </template>
 
@@ -18,7 +20,7 @@ export default {
         title: String,
         origianlTitle: String,
         lang: String,
-        vote: Number,
+        vote:  Number,
     },
     components: {
         LangFlag
@@ -31,7 +33,12 @@ export default {
     img {
         width: 300px;
         height: 450px;
+        border: 3px solid rgb(206, 192, 192);
     }
+
+img:hover {
+    display: none;
+}
 
 .x{
     width: calc(100% / 3 - 20px);

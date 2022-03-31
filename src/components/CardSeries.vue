@@ -1,10 +1,10 @@
 <template>
         <div class="x">
-            <img :src="`https://image.tmdb.org/t/p/w342/${src}`" alt="">
-            <div>{{ title }}</div>
+            <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342/${src}`" alt="title">
+            <h4>{{ title }}</h4>
             <p>{{origianlTitle }}</p>
             <lang-flag :iso="lang" :squared="false" />
-            <h4>{{ vote }}</h4>
+            <h4> vote:{{ vote }} </h4>
         </div>
 </template>
 
